@@ -18,14 +18,14 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Jerson Berdos — Vibe Coder Specialist",
+    default: "Jerson Berdos — Healthcare Coordinator",
     template: "%s | Jerson Berdos",
   },
   description:
-    "Personal portfolio of Jerson Berdos — a Vibe Coder Specialist crafting digital experiences that resonate with purpose and precision.",
+    "Personal portfolio of Jerson Berdos — a Healthcare Coordinator crafting digital experiences that resonate with purpose and precision.",
   keywords: [
     "Jerson Berdos",
-    "Vibe Coder",
+    "Healthcare Coordinator",
     "Full Stack Developer",
     "React",
     "Next.js",
@@ -39,13 +39,13 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://jersonberdos.dev",
     siteName: "Jerson Berdos",
-    title: "Jerson Berdos — Vibe Coder Specialist",
+    title: "Jerson Berdos — Healthcare Coordinator",
     description:
       "Crafting digital experiences that resonate with purpose and precision.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jerson Berdos — Vibe Coder Specialist",
+    title: "Jerson Berdos — Healthcare Coordinator",
     description:
       "Crafting digital experiences that resonate with purpose and precision.",
     creator: "@jersonberdos",

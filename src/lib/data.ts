@@ -28,7 +28,7 @@ export interface SocialLink {
 
 export const personalInfo = {
   name: "Jerson Berdos",
-  title: "Vibe Coder Specialist",
+  title: "Healthcare Coordinator",
   tagline: "Crafting digital experiences that resonate with purpose and precision.",
   bio: `I'm a passionate developer who thrives at the intersection of creativity and technology. 
 With a deep love for clean code and beautiful interfaces, I transform complex problems into 
