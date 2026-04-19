@@ -19,8 +19,8 @@ export function GradientText({
     <motion.span
       className={cn(
         "inline-block bg-clip-text text-transparent",
-        "bg-gradient-to-r from-[oklch(0.75_0.2_285)] via-[oklch(0.72_0.18_195)] to-[oklch(0.65_0.25_285)]",
-        animate && "bg-[length:200%_auto] animate-gradient",
+        "bg-gradient-to-br from-white via-[oklch(0.8_0.15_285)] to-[oklch(0.7_0.25_285)]",
+        animate && "bg-[length:200%_200%] animate-gradient",
         className
       )}
       initial={{ opacity: 0, y: 20 }}
