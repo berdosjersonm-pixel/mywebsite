@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/contact-form";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { personalInfo, socialLinks } from "@/lib/data";
 import { Mail, MapPin, Download } from "lucide-react";
+import { Magnetic } from "@/components/magnetic";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -51,7 +52,7 @@ export default function ContactPage() {
               <div className="h-px w-8 bg-gradient-to-r from-[oklch(0.65_0.25_285)] to-transparent" />
               Contact
             </div>
-            <h1 className="mb-4 text-4xl font-bold sm:text-5xl md:text-6xl">
+            <h1 className="mb-4 text-4xl font-bold sm:text-5xl md:text-6xl font-heading">
               Let&apos;s <span className="gradient-text">Connect</span>
             </h1>
             <p className="mb-16 max-w-2xl text-lg text-muted-foreground">
@@ -132,28 +133,31 @@ export default function ContactPage() {
                   </h3>
                   <div className="grid grid-cols-2 gap-3">
                     {socialLinks.map((link) => (
-                      <a
-                        key={link.name}
-                        href={link.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2.5 rounded-xl border border-white/5 bg-white/[0.02] px-4 py-3 text-sm text-muted-foreground transition-all hover:bg-white/[0.05] hover:text-foreground hover:border-white/10"
-                      >
-                        {iconMap[link.icon]}
-                        {link.name}
-                      </a>
+                      <Magnetic key={link.name} strength={0.2}>
+                        <a
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2.5 rounded-xl border border-white/5 bg-white/[0.02] px-4 py-3 text-sm text-muted-foreground transition-all hover:bg-white/[0.05] hover:text-foreground hover:border-white/10"
+                        >
+                          {iconMap[link.icon]}
+                          {link.name}
+                        </a>
+                      </Magnetic>
                     ))}
                   </div>
                 </div>
 
                 {/* Resume Download */}
-                <a
-                  href={personalInfo.resumeUrl}
-                  className="flex w-full items-center justify-center gap-2 rounded-xl border border-white/8 bg-white/[0.03] px-6 py-3.5 text-sm font-medium text-foreground/80 transition-all hover:bg-white/[0.06] hover:text-foreground hover:border-white/15"
-                >
-                  <Download size={16} />
-                  Download Resume
-                </a>
+                <Magnetic strength={0.1}>
+                  <a
+                    href={personalInfo.resumeUrl}
+                    className="flex w-full items-center justify-center gap-2 rounded-xl border border-white/8 bg-white/[0.03] px-6 py-3.5 text-sm font-medium text-foreground/80 transition-all hover:bg-white/[0.06] hover:text-foreground hover:border-white/15"
+                  >
+                    <Download size={16} />
+                    Download Resume
+                  </a>
+                </Magnetic>
               </div>
             </ScrollReveal>
           </div>

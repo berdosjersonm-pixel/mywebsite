@@ -14,6 +14,7 @@ import {
 import { cn } from "@/lib/utils";
 import { ScrollReveal } from "./scroll-reveal";
 import { personalInfo, stats, skills, projects } from "@/lib/data";
+import { Magnetic } from "./magnetic";
 
 // ── Individual Bento Card ─────────────────────────────────
 
@@ -54,7 +55,7 @@ export function BentoGrid() {
         {/* Section Header */}
         <ScrollReveal>
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold sm:text-4xl">
+            <h2 className="mb-4 text-4xl font-bold sm:text-5xl font-heading">
               At a{" "}
               <span className="gradient-text">Glance</span>
             </h2>
@@ -65,7 +66,7 @@ export function BentoGrid() {
         </ScrollReveal>
 
         {/* Bento Grid Layout */}
-        <div className="grid auto-rows-[180px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid auto-rows-[minmax(180px,auto)] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {/* About Card — spans 2 rows */}
           <BentoCard className="row-span-2 p-6" delay={0}>
             <div className="flex h-full flex-col justify-between">
@@ -80,16 +81,18 @@ export function BentoGrid() {
                   delightful user experiences.
                 </p>
               </div>
-              <Link
-                href="/about"
-                className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-[oklch(0.72_0.18_195)] transition-colors hover:text-[oklch(0.82_0.14_195)]"
-              >
-                Learn more
-                <ArrowRight
-                  size={14}
-                  className="transition-transform group-hover:translate-x-1"
-                />
-              </Link>
+              <Magnetic strength={0.1}>
+                <Link
+                  href="/about"
+                  className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-[oklch(0.72_0.18_195)] transition-colors hover:text-[oklch(0.82_0.14_195)]"
+                >
+                  Learn more
+                  <ArrowRight
+                    size={14}
+                    className="transition-transform group-hover:translate-x-1"
+                  />
+                </Link>
+              </Magnetic>
             </div>
           </BentoCard>
 
@@ -237,13 +240,15 @@ export function BentoGrid() {
               <p className="mb-3 text-sm text-muted-foreground">
                 Let&apos;s build something amazing together.
               </p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-[oklch(0.65_0.25_285)] to-[oklch(0.55_0.25_285)] px-5 py-2 text-sm font-medium text-white transition-all hover:shadow-lg hover:shadow-[oklch(0.65_0.25_285/20%)] hover:scale-105 active:scale-95"
-              >
-                Say Hello
-                <ArrowRight size={14} />
-              </Link>
+              <Magnetic strength={0.2}>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-[oklch(0.65_0.25_285)] to-[oklch(0.55_0.25_285)] px-6 py-2.5 text-sm font-medium text-white shadow-lg shadow-[oklch(0.65_0.25_285/20%)] transition-all hover:shadow-xl hover:shadow-[oklch(0.65_0.25_285/30%)] hover:scale-105 active:scale-95"
+                >
+                  Say Hello
+                  <ArrowRight size={14} />
+                </Link>
+              </Magnetic>
             </div>
           </BentoCard>
         </div>

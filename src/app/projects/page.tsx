@@ -6,6 +6,7 @@ import { ProjectCard } from "@/components/project-card";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { projects, projectCategories } from "@/lib/data";
 import { cn } from "@/lib/utils";
+import { Magnetic } from "@/components/magnetic";
 
 export default function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -25,7 +26,7 @@ export default function ProjectsPage() {
               <div className="h-px w-8 bg-gradient-to-r from-[oklch(0.65_0.25_285)] to-transparent" />
               Portfolio
             </div>
-            <h1 className="mb-4 text-4xl font-bold sm:text-5xl md:text-6xl">
+            <h1 className="mb-4 text-4xl font-bold sm:text-5xl md:text-6xl font-heading">
               My <span className="gradient-text">Projects</span>
             </h1>
             <p className="mb-12 max-w-2xl text-lg text-muted-foreground">
@@ -39,29 +40,30 @@ export default function ProjectsPage() {
           <ScrollReveal delay={0.1}>
             <div className="mb-10 flex flex-wrap gap-2">
               {projectCategories.map((cat) => (
-                <button
-                  key={cat.id}
-                  onClick={() => setActiveCategory(cat.id)}
-                  className={cn(
-                    "relative rounded-lg px-4 py-2 text-sm font-medium transition-all",
-                    activeCategory === cat.id
-                      ? "text-foreground"
-                      : "text-muted-foreground hover:text-foreground hover:bg-white/[0.03]"
-                  )}
-                >
-                  {activeCategory === cat.id && (
-                    <motion.div
-                      layoutId="project-filter"
-                      className="absolute inset-0 rounded-lg glass"
-                      transition={{
-                        type: "spring",
-                        stiffness: 380,
-                        damping: 30,
-                      }}
-                    />
-                  )}
-                  <span className="relative z-10">{cat.label}</span>
-                </button>
+                <Magnetic key={cat.id} strength={0.1}>
+                  <button
+                    onClick={() => setActiveCategory(cat.id)}
+                    className={cn(
+                      "relative rounded-lg px-4 py-2 text-sm font-medium transition-all",
+                      activeCategory === cat.id
+                        ? "text-foreground"
+                        : "text-muted-foreground hover:text-foreground hover:bg-white/[0.03]"
+                    )}
+                  >
+                    {activeCategory === cat.id && (
+                      <motion.div
+                        layoutId="project-filter"
+                        className="absolute inset-0 rounded-lg glass"
+                        transition={{
+                          type: "spring",
+                          stiffness: 380,
+                          damping: 30,
+                        }}
+                      />
+                    )}
+                    <span className="relative z-10">{cat.label}</span>
+                  </button>
+                </Magnetic>
               ))}
             </div>
           </ScrollReveal>

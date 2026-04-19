@@ -20,7 +20,7 @@ export default function AboutPage() {
               <div className="h-px w-8 bg-gradient-to-r from-[oklch(0.65_0.25_285)] to-transparent" />
               About Me
             </div>
-            <h1 className="mb-6 text-4xl font-bold sm:text-5xl md:text-6xl">
+            <h1 className="mb-6 text-4xl font-bold sm:text-5xl md:text-6xl font-heading">
               Hey, I&apos;m{" "}
               <span className="gradient-text">{personalInfo.name}</span>
             </h1>
@@ -92,7 +92,7 @@ export default function AboutPage() {
       <section className="px-6 py-16">
         <div className="mx-auto max-w-4xl">
           <ScrollReveal>
-            <h2 className="mb-12 text-center text-3xl font-bold sm:text-4xl">
+            <h2 className="mb-12 text-center text-3xl font-bold sm:text-4xl font-heading">
               My <span className="gradient-text">Philosophy</span>
             </h2>
           </ScrollReveal>
